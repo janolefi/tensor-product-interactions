@@ -25,4 +25,10 @@ The methodology is illustrated through three applied case studies analysing
 
 Code for reproducing all results can be found in the `case_studies` directory.
 
+## Fitted models and refitting
+
+To save computation time, the scripts load saved model objects from `case_studies/objects` by default (`refit = FALSE`). The fitted models and the grid search fits for the elephant case study, as well as all simulation runs in `simulations/results`, are included in this repository, so `african_elephant.R`, `elephant_grid_search.R` and `simulation.R` run without refitting.
+
+The fitted models for the fruit fly and muskox case studies are too large for GitHub (between 60 MB and 1 GB per file). To run `fruitflies.R` or `muskox.R`, set `refit = TRUE` at the top of the script. The models are then fitted and saved to `case_studies/objects`, after which `refit = FALSE` can be used again. For orientation, refitting took about 10 minutes for the fruit flies and about 4 hours for the muskox (most of which is the space-time model) in our runs; times depend on the machine.
+
 ![](./case_studies/figs/muskox_spacetime.png)
